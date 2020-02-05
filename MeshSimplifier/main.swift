@@ -7,6 +7,12 @@
 //
 
 import Foundation
+import MetalKit
 
-print("Hello, World!")
+let device: MTLDevice!
 
+device = MTLCreateSystemDefaultDevice()
+
+let simplifier = Simplifier(device: device)
+
+try simplifier.simplify(filename: "bunny", iterations: 20)
